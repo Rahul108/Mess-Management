@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework.authtoken',
     'djoser',
 ]
 
@@ -66,9 +67,6 @@ DJOSER = {
     "SET_PASSWORD_RETYPE": True,
     "PASSWORD_RESET_CONFIRM_RETYPE": True,
     "LOGOUT_ON_PASSWORD_CHANGE": True,
-    'SERIALIZERS': {
-        'token': 'user_mngmt_app.serializers.user_serializer.TokenAndUserInfoSerializer'
-    }
 }
 
 
