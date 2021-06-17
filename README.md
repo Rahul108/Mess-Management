@@ -40,7 +40,7 @@ CREATE USER <username> WITH PASSWORD <password>;
 ALTER USER <username> WITH SUPERUSER;
 
 /* create new tkdc database with one of the users as owner */
-CREATE DATABASE tkdc WITH OWNER=<username>;
+CREATE DATABASE mess_management WITH OWNER=<username>;
 ```
 
 ## Project Setup
