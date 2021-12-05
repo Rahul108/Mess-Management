@@ -25,7 +25,7 @@ psql --version
 
 1. create a new user if you do not want to use existing users
 1. give new user superuser role
-1. create new database 'tkdc' with the chosen user as owner
+1. create new database 'mess_management' with the chosen user as owner
 
 ```sh
 # enter postgresql cli
