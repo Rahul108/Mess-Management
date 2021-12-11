@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'mess_app',
     'utils',
     'pghistory',
+    'drf_yasg',
 ]
 
 REST_FRAMEWORK = {
