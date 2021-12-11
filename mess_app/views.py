@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
-from mess_app.models import Mess, MessDuration, MessNUser
-from mess_app.serializers import MessDurationSerializer, MessSerializer, MessNUserSerializer
+from mess_app.models import Mess, MessEvent, MessNUser
+from mess_app.serializers import MessEventSerializer, MessSerializer, MessNUserSerializer
 
 class MessViewSet(viewsets.ModelViewSet):
     queryset = Mess.objects.all()
@@ -13,7 +13,7 @@ class MessNUserViewSet(viewsets.ModelViewSet):
     serializer_class = MessNUserSerializer
     permission_classes = [IsAuthenticated]
 
-class MessDurationViewSet(viewsets.ModelViewSet):
-    queryset = MessDuration.objects.all()
-    serializer_class = MessDurationSerializer
+class MessEventViewSet(viewsets.ModelViewSet):
+    queryset = MessEvent.objects.all()
+    serializer_class = MessEventSerializer
     permission_classes = [IsAuthenticated]

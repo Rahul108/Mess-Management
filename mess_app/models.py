@@ -1,6 +1,6 @@
 from django.db import models
 from django.db.models.deletion import DO_NOTHING
-from utils.models import *
+from utils.models import AbstractAutoField
 import pghistory
 from django.contrib.auth.models import User
 
@@ -31,12 +31,12 @@ class MessNUser(AbstractAutoField):
     mess = models.ForeignKey(
         Mess,
         on_delete=DO_NOTHING,
-        related_name="mess_id_on_mess_n_user" 
+        related_name="mess_id_on_mess_n_user",
     )
     user= models.ForeignKey(
         User,
         on_delete=DO_NOTHING,
-        related_name="user_id" 
+        related_name="user_id"
     )
     active = models.BooleanField(default=True)
 
@@ -50,15 +50,17 @@ class MessNUser(AbstractAutoField):
     pghistory.BeforeDelete("before_delete"),
     obj_fk=None,
 )
-class  MessDuration(AbstractAutoField):
+class MessEvent(AbstractAutoField):
     mess = models.ForeignKey(
         Mess,
         on_delete=DO_NOTHING,
-        related_name="mess_id_on_mess_n_duration" 
+        related_name="mess_id_on_mess_event",
+        null=True
     )
-    start_date = models.DateField()
+    start_date = models.DateField(null=True)
     end_date = models.DateField(null=True, blank=True)
     number_of_days = models.IntegerField(null=True, blank=True)
+    active = models.BooleanField(default=True)
 
     class Meta:
-        db_table = "mess_n_duration"
+        db_table = "mess_event"

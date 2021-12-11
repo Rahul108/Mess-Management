@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from mess_app.models import Mess, MessNUser, MessDuration
+from mess_app.models import Mess, MessNUser, MessEvent
 
 class MessSerializer(serializers.ModelSerializer):
     class Meta:
@@ -11,7 +11,7 @@ class MessNUserSerializer(serializers.ModelSerializer):
         model = MessNUser
         fields = '__all__'
 
-class MessDurationSerializer(serializers.ModelSerializer):
+class MessEventSerializer(serializers.ModelSerializer):
     class Meta:
-        model = MessDuration
+        model = MessEvent
         fields = '__all__'
