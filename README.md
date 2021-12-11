@@ -77,4 +77,7 @@ python manage.py createsuperuser
 
 # run server
 python manage.py runserver
+
+# Browse APIs collection on
+http://localhost:8000/swagger/
 ```
