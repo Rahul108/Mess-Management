@@ -1,3 +1,5 @@
 from django.contrib import admin
+from expense_app.models import CostCategory, MessEventNCostCategoryNUserCost
 
-# Register your models here.
+admin.site.register(CostCategory)
+admin.site.register(MessEventNCostCategoryNUserCost)

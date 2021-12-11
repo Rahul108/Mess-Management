@@ -14,7 +14,7 @@ from mess_app.models import MessEvent
 )
 class CostCategory(AbstractAutoField):
     name = models.CharField(max_length=200)
-    type = models.CharField(max_length=200, choices=CostCategoryType, default=CostCategoryType.MANDATORY)
+    type = models.CharField(max_length=200, choices=CostCategoryType.choices, default=CostCategoryType.MANDATORY)
 
     class Meta:
         db_table = "cost_category"

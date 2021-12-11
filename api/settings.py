@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'djoser',
     'user_app',
     'mess_app',
+    'expense_app',
     'utils',
     'pghistory',
     'drf_yasg',
