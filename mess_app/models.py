@@ -2,7 +2,7 @@ from django.db import models
 from django.db.models.deletion import DO_NOTHING
 from utils.models import *
 import pghistory
-from django.contrib.auth.models import User, Group
+from django.contrib.auth.models import User
 
 
 
@@ -50,7 +50,7 @@ class MessNUser(AbstractAutoField):
     pghistory.BeforeDelete("before_delete"),
     obj_fk=None,
 )
-class  MessNDuration(AbstractAutoField):
+class  MessDuration(AbstractAutoField):
     mess = models.ForeignKey(
         Mess,
         on_delete=DO_NOTHING,
@@ -62,24 +62,3 @@ class  MessNDuration(AbstractAutoField):
 
     class Meta:
         db_table = "mess_n_duration"
-
-
-
-@pghistory.track(
-    pghistory.AfterInsert("after_insert"),
-    pghistory.AfterUpdate("after_update"),
-    pghistory.BeforeDelete("before_delete"),
-    obj_fk=None,
-)
-class MessDurationData(AbstractAutoField):
-    mess_n_duration = models.ForeignKey(
-        MessNDuration,
-        on_delete=DO_NOTHING,
-        related_name="mess_n_duration_id_on_mess_duration_data" 
-    )
-    start_date = models.DateField()
-    end_date = models.DateField(null=True, blank=True)
-    number_of_days = models.IntegerField(null=True, blank=True)
-
-    class Meta:
-        db_table = "mess_duration_data"
