@@ -4,14 +4,6 @@ from utils.models import AbstractAutoField
 import pghistory
 from django.contrib.auth.models import User
 
-
-
-@pghistory.track(
-    pghistory.AfterInsert("after_insert"),
-    pghistory.AfterUpdate("after_update"),
-    pghistory.BeforeDelete("before_delete"),
-    obj_fk=None,
-)
 class Mess(AbstractAutoField):
     name = models.CharField(max_length=200)
     code = models.CharField(max_length=20, unique=True)
