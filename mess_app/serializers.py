@@ -20,7 +20,6 @@ class MessSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         new_code = self.__code_generator(validated_data['name'])
         validated_data['code'] = self.__check_unique(new_code, validated_data['name'])
-        print(validated_data['code'])
         return super().create(validated_data)
     class Meta:
         model = Mess
