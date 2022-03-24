@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 
 class Mess(AbstractAutoField):
     name = models.CharField(max_length=200)
-    code = models.CharField(max_length=20, unique=True)
+    code = models.CharField(max_length=20, unique=True, blank=True)
     active = models.BooleanField(default=True)
 
     class Meta:
