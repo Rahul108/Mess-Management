@@ -81,3 +81,10 @@ python manage.py runserver
 # Browse APIs collection on
 http://localhost:8000/swagger/
 ```
+
+## Run with gunicorn
+
+Update required params on `/config/gunicorn/dev.py`
+
+```sh
+gunicorn -c config/gunicorn/dev.py
