@@ -131,6 +131,11 @@ DATABASES = pgconnection.configure({
         "PASSWORD": env.str("DATABASE_PASSWORD"),
         "HOST": env.str("DATABASE_HOST", default="localhost"),
         "PORT": env.int("DATABASE_PORT", default=5432),
+        "TIME_ZONE": env.str("DEFAULT_TIME_ZONE", default="UTC"),
+        "CONN_HEALTH_CHECKS": True,
+        "CONN_MAX_AGE": 0,
+        "AUTOCOMMIT": True,
+        "ATOMIC_REQUESTS": True
     },
 })
 
