@@ -12,6 +12,7 @@ class MessNUserViewSet(viewsets.ModelViewSet):
     queryset = MessNUser.objects.all()
     serializer_class = MessNUserSerializer
     permission_classes = [IsAuthenticated]
+    filterset_fields = ['mess', 'user']
 
 class MessEventViewSet(viewsets.ModelViewSet):
     queryset = MessEvent.objects.all()
