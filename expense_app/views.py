@@ -9,11 +9,13 @@ class CostCategoryViewSet(viewsets.ModelViewSet):
     queryset = CostCategory.objects.all()
     serializer_class = CostCategorySerializer
     permission_classes = [IsAuthenticated]
+    filterset_fields = ['type']
 
 class MessEventNCostCategoryNUserCostViewSet(viewsets.ModelViewSet):
     queryset = MessEventNCostCategoryNUserCost.objects.all()
     serializer_class = MessEventNCostCategoryNUserCostSerializer
     permission_classes = [IsAuthenticated]
+    filterset_fields = ['mess_event', 'cost_category', 'user']
 
 class TotalCostOfMess(viewsets.GenericViewSet, mixins.ListModelMixin):
     queryset = MessEvent.objects.all()
