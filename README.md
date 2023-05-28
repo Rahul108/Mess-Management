@@ -1,3 +1,6 @@
+## Tech Doc
+https://www.notion.so/Mess-Management-Backend-da8cdc7321b3450192a0db6a11c9cad0?pvs=4
+
 ## Installation of pre-requisites
 
 1. Python3
