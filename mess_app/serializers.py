@@ -1,11 +1,11 @@
-import random
 from rest_framework import serializers
 from mess_app.models import Mess, MessNUser, MessEvent
+import secrets
 
 class MessSerializer(serializers.ModelSerializer):
 
     def __code_generator(self, mess_name):
-        code = mess_name[0:5].upper() + str(random.randint(10000, 99999))
+        code = mess_name[0:5].upper() + str(secrets.SystemRandom().randint(10000, 99999))
         return code
 
     def __check_unique(self, code, mess_name):
